@@ -25,6 +25,7 @@ function turasGallery()
 			a.setAttribute("href", img.dataset.src);
 			//a.setAttribute("class", "fancybox");
 			a.setAttribute("rel", "gallery");
+			a.setAttribute("title", img.alt);
 			var innerImage = document.createElement("img");
 			innerImage.setAttribute("src", img.dataset.src + "?format=100w");
 			a.appendChild(innerImage);
