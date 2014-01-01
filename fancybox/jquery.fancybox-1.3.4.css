@@ -253,6 +253,14 @@
 	background-position: -40px -122px;
 }
 
+@media only screen
+{
+	.fancybox-nav span 
+	{
+	 visibility: visible;
+	}
+}
+
 #fancybox-title {
 	font-family: Helvetica;
 	font-size: 12px;
