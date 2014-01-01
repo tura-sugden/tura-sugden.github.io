@@ -12,7 +12,6 @@ function turasGallery()
 
 		var div = document.createElement("div");
 		div.setAttribute("id", "tgalllery");
-		galleryElements[0].appendChild(div);
 		
 		var element = elements[0];
 		//element.style.display = "block";
@@ -24,9 +23,11 @@ function turasGallery()
 			a.setAttribute("href", img.dataset.src);
 			var im = document.createElement("img");
 			im.setAttribute("src", img.dataset.src + "?format=100w");
-			a.appendChild(img);
+			a.appendChild(im);
 			div.appendChild(a);
 		}
+
+		galleryElements[0].appendChild(div);
 	}
 
 	function hasGallery()
