@@ -32,7 +32,7 @@ function turasGallery()
 					var description = meta.children[1].children[0].innerText;
 					if(description)
 					{
-						title = title + "\n\n" + description;
+						title = title + "\n" + description;
 					}
 				}
 			}
@@ -43,9 +43,7 @@ function turasGallery()
 
 			var a = document.createElement("a");
 			a.setAttribute("href", img.dataset.src);
-			//a.setAttribute("class", "fancybox");
 			a.setAttribute("rel", "gallery");
-			console.log("TITLE IS", title);
 			if(title)
 			{
 				a.setAttribute("title", title);
@@ -60,7 +58,8 @@ function turasGallery()
 
 		$(galleryImages).fancybox(
 			{
-				"titlePosition":"inside"
+				"titlePosition":"inside",
+				"closeBtn":false
 			});
 
 		galleryElements[0].appendChild(div);
