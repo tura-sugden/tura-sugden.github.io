@@ -15,20 +15,25 @@ function turasGallery()
 		
 		var element = elements[0];
 		//element.style.display = "block";
+
+		var galleryImages = [];
 		for(var i = 0; i < element.children.length; i++)
 		{
 			var img = element.children[i].children[0];
 
 			var a = document.createElement("a");
 			a.setAttribute("href", img.dataset.src);
-			a.setAttribute("class", "fancybox");
+			//a.setAttribute("class", "fancybox");
+			a.setAttribute("rel", "gallery");
 			var innerImage = document.createElement("img");
 			innerImage.setAttribute("src", img.dataset.src + "?format=100w");
 			a.appendChild(innerImage);
 			div.appendChild(a);
+
+			galleryImages.push(a);
 		}
 
-		$(".fancybox").fancybox();
+		$(galleryImages).fancybox();
 
 		galleryElements[0].appendChild(div);
 	}
