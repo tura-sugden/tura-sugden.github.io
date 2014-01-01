@@ -15,21 +15,20 @@ function turasGallery()
 		
 		var element = elements[0];
 		//element.style.display = "block";
-		var arr = [];
 		for(var i = 0; i < element.children.length; i++)
 		{
 			var img = element.children[i].children[0];
 
 			var a = document.createElement("a");
 			a.setAttribute("href", img.dataset.src);
+			a.setAttribute("class", "fancybox");
 			var innerImage = document.createElement("img");
 			innerImage.setAttribute("src", img.dataset.src + "?format=100w");
 			a.appendChild(innerImage);
-			arr.push(a);
 			div.appendChild(a);
 		}
 
-		$(arr).fancybox();
+		$(".fancybox").fancybox();
 
 		galleryElements[0].appendChild(div);
 	}
