@@ -6,16 +6,27 @@ function turasGallery()
 		var galleryElements = document.getElementsByClassName("project gallery-project");
 		if(!elements.length || !galleryElements.length)
 		{
+			// Not a gallery page.
 			return;
 		}
 
-		
 		var div = document.createElement("div");
-		div.setAttribute("id", "testingT");
+		div.setAttribute("id", "tgalllery");
 		galleryElements[0].appendChild(div);
 		
 		var element = elements[0];
-		element.style.display = "block";
+		//element.style.display = "block";
+		for(var i = 0; i < element.children.length; i++)
+		{
+			var img = element.children[i].children[0];
+
+			var a = document.createElement("a");
+			a.setAttribute("href", img.dataset.src);
+			var im = document.createElement("img");
+			im.setAttribute("src", img.dataset.src + "?format=100w");
+			a.appendChild(img);
+			div.appendChild(a);
+		}
 	}
 
 	function hasGallery()
