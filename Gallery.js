@@ -19,13 +19,34 @@ function turasGallery()
 		var galleryImages = [];
 		for(var i = 0; i < element.children.length; i++)
 		{
-			var img = element.children[i].children[0];
+			var current = element.children[i].children;
+			var img = current.children[0];
+			var meta = current.children.length > 1 && current.children[1];
+
+			var title = "";
+			var description  = "";
+			try
+			{
+				title = meta.children[0].children[0].innerText;
+				description = meta.children[1].children[0].innerText;
+				if(description)
+				{
+					title = title + "\n\n" + description;
+				}
+			}
+			catch(e)
+			{
+
+			}
 
 			var a = document.createElement("a");
 			a.setAttribute("href", img.dataset.src);
 			//a.setAttribute("class", "fancybox");
 			a.setAttribute("rel", "gallery");
-			a.setAttribute("title", img.alt);
+			if(title)
+			{
+				a.setAttribute("title", title);
+			}
 			var innerImage = document.createElement("img");
 			innerImage.setAttribute("src", img.dataset.src + "?format=100w");
 			a.appendChild(innerImage);
@@ -34,7 +55,13 @@ function turasGallery()
 			galleryImages.push(a);
 		}
 
-		$(galleryImages).fancybox();
+		$(galleryImages).fancybox(
+			{
+				"title":
+				{
+					"type":"inside"
+				}
+			});
 
 		galleryElements[0].appendChild(div);
 	}
