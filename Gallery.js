@@ -59,12 +59,9 @@ function turasGallery()
 		}
 
 		$(galleryImages).fancybox(
-			/*{
-				"title":
-				{
-					"type":"inside"
-				}
-			}*/);
+			{
+				"titlePosition":"inside"
+			});
 
 		galleryElements[0].appendChild(div);
 	}
