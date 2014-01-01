@@ -1,13 +1,14 @@
 function turasGallery()
 {
-	function setupGallery()
+	var isSetup = false;
+	function trySetupGallery()
 	{
 		var elements = document.getElementsByClassName("image-list");
 		var galleryElements = document.getElementsByClassName("project gallery-project");
 		if(!elements.length || !galleryElements.length)
 		{
 			// Not a gallery page.
-			return;
+			return false;
 		}
 
 		var div = document.createElement("div");
@@ -63,6 +64,8 @@ function turasGallery()
 			});
 
 		galleryElements[0].appendChild(div);
+
+		return true;
 	}
 
 	function hasGallery()
@@ -81,9 +84,25 @@ function turasGallery()
 
 	function checkReady()
 	{
+		if(!isSetup)
+		{
+			if(!trySetupGallery())
+			{
+				if(document.readyState != "complete")
+				{
+					setTimeout(checkReady, 100);
+				}
+			}
+			else
+			{
+				isSetup = true;
+			}
+		}
+		return;
+
 		if(!hasGallery())
 		{
-			setTimeout(checkReady, 100);
+			
 		}
 		else
 		{
