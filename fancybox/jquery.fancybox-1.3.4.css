@@ -253,7 +253,7 @@
 	background-position: -40px -122px;
 }
 
-@media only screen
+@media only screen and (max-width: 640px)
 {
 	#fancybox-left, #fancybox-right
 	{
