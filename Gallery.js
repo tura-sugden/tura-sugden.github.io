@@ -10,7 +10,6 @@ function turasGallery()
 			return;
 		}
 
-		console.log("SETTING UP");
 		var div = document.createElement("div");
 		div.setAttribute("id", "tgalllery");
 		
@@ -25,6 +24,7 @@ function turasGallery()
 			var innerImage = document.createElement("img");
 			innerImage.setAttribute("src", img.dataset.src + "?format=100w");
 			a.appendChild(innerImage);
+			$(a).fancybox();
 			div.appendChild(a);
 		}
 
