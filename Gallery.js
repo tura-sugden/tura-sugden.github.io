@@ -27,10 +27,13 @@ function turasGallery()
 			try
 			{
 				title = meta.children[0].children[0].innerText;
-				var description = meta.children[1].children[0].innerText;
-				if(description)
+				if(meta.children.length > 1)
 				{
-					title = title + "\n\n" + description;
+					var description = meta.children[1].children[0].innerText;
+					if(description)
+					{
+						title = title + "\n\n" + description;
+					}
 				}
 			}
 			catch(e)
@@ -42,6 +45,7 @@ function turasGallery()
 			a.setAttribute("href", img.dataset.src);
 			//a.setAttribute("class", "fancybox");
 			a.setAttribute("rel", "gallery");
+			console.log("TITLE IS", title);
 			if(title)
 			{
 				a.setAttribute("title", title);
@@ -55,12 +59,12 @@ function turasGallery()
 		}
 
 		$(galleryImages).fancybox(
-			{
+			/*{
 				"title":
 				{
 					"type":"inside"
 				}
-			});
+			}*/);
 
 		galleryElements[0].appendChild(div);
 	}
