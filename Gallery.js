@@ -20,8 +20,8 @@ function turasGallery()
 		for(var i = 0; i < element.children.length; i++)
 		{
 			var current = element.children[i].children;
-			var img = current.children[0];
-			var meta = current.children.length > 1 && current.children[1];
+			var img = current[0];
+			var meta = current.length > 1 && current[1];
 
 			var title = "";
 			var description  = "";
