@@ -60,7 +60,7 @@ function turasGallery()
 		$(galleryImages).fancybox(
 			{
 				"titlePosition":"inside",
-				"closeBtn":false
+				"showCloseButton":false
 			});
 
 		galleryElements[0].appendChild(div);
