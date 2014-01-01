@@ -22,13 +22,12 @@ function turasGallery()
 			var current = element.children[i].children;
 			var img = current[0];
 			var meta = current.length > 1 && current[1];
-
+			console.log(meta);
 			var title = "";
-			var description  = "";
 			try
 			{
 				title = meta.children[0].children[0].innerText;
-				description = meta.children[1].children[0].innerText;
+				var description = meta.children[1].children[0].innerText;
 				if(description)
 				{
 					title = title + "\n\n" + description;
@@ -36,7 +35,7 @@ function turasGallery()
 			}
 			catch(e)
 			{
-
+				console.log("ERROR", e);
 			}
 
 			var a = document.createElement("a");
