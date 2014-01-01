@@ -1070,7 +1070,7 @@
 			$.fancybox.next();
 		});
 
-		if ($.fn.mousewheel) {
+		/*if ($.fn.mousewheel) {
 			wrap.bind('mousewheel.fb', function(e, delta) {
 				if (busy) {
 					e.preventDefault();
@@ -1080,7 +1080,7 @@
 					$.fancybox[ delta > 0 ? 'prev' : 'next']();
 				}
 			});
-		}
+		}*/
 
 		if (!$.support.opacity) {
 			wrap.addClass('fancybox-ie');
