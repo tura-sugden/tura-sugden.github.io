@@ -50,7 +50,7 @@ function turasGallery()
 				a.setAttribute("title", title);
 			}
 			var innerImage = document.createElement("img");
-			innerImage.setAttribute("src", img.dataset.src + "?format=100w");
+			innerImage.setAttribute("src", img.dataset.src + "?format=200w");
 			a.appendChild(innerImage);
 			div.appendChild(a);
 
