@@ -13,6 +13,7 @@ function turasGallery()
 
 		var div = document.createElement("div");
 		div.setAttribute("id", "tgalllery");
+		div.style.textAlign = "center";
 		
 		var element = elements[0];
 		//element.style.display = "block";
