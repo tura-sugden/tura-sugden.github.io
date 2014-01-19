@@ -9,6 +9,7 @@ function turasGallery()
 		{
 			var footerElement = footerElements[0];
 			var divFooterText = document.createElement("div");
+			divFooterText.className = "turasfooter";
 			divFooterText.innerHTML = "Contemporary jewelry, traditional method<br/>made by hand in San Francisco";
 
 			footerElement.insertBefore(divFooterText, footerElement.firstChild);
