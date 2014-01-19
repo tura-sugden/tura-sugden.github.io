@@ -3,6 +3,17 @@ function turasGallery()
 	var isSetup = false;
 	function trySetupGallery()
 	{
+		// Inject footer.
+		var footerElements = document.getElementsByClassName("info-footer");
+		if(footerElements && footerElements.length)
+		{
+			var footerElement = footerElements[0];
+			var divFooterText = document.createElement("div");
+			divFooterText.innerHTML = "Contemporary jewelry, traditional method<br/>made by hand in San Francisco";
+
+			footerElement.insertBefore(divFooterText, footerElement.firstChild);
+		}
+
 		var elements = document.getElementsByClassName("image-list");
 		var galleryElements = document.getElementsByClassName("project gallery-project");
 		if(!elements.length || !galleryElements.length)
@@ -98,16 +109,6 @@ function turasGallery()
 			{
 				isSetup = true;
 			}
-		}
-		return;
-
-		if(!hasGallery())
-		{
-			
-		}
-		else
-		{
-			setupGallery();
 		}
 	}
 
