@@ -2,6 +2,7 @@ function turasGallery()
 {
 	var isSetup = false;
 	var injectedFooter = false;
+
 	function trySetupGallery()
 	{
 		// Inject footer.
@@ -16,8 +17,8 @@ function turasGallery()
 				divFooterText.innerHTML = "Contemporary jewelry, traditional method<br/>made by hand in San Francisco";
 
 				footerElement.insertBefore(divFooterText, footerElement.firstChild);
+				injectedFooter = true;
 			}
-			injectedFooter = true;
 		}
 
 		var elements = document.getElementsByClassName("image-list");
