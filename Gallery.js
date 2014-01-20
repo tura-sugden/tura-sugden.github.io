@@ -63,7 +63,7 @@ function turasGallery()
 				console.log("ERROR", e);
 			}
 
-			var divWrap = document.createElement("div");
+			var divWrap = document.createElement("span");
 			divWrap.className = "galleryImageWrap";
 			var a = document.createElement("a");
 			a.setAttribute("href", img.dataset.src);
