@@ -1,18 +1,23 @@
 function turasGallery()
 {
 	var isSetup = false;
+	var injectedFooter = false;
 	function trySetupGallery()
 	{
 		// Inject footer.
-		var footerElements = document.getElementsByClassName("info-footer");
-		if(footerElements && footerElements.length)
+		if(!injectedFooter)
 		{
-			var footerElement = footerElements[0];
-			var divFooterText = document.createElement("div");
-			divFooterText.className = "turasfooter";
-			divFooterText.innerHTML = "Contemporary jewelry, traditional method<br/>made by hand in San Francisco";
+			var footerElements = document.getElementsByClassName("info-footer");
+			if(footerElements && footerElements.length)
+			{
+				var footerElement = footerElements[0];
+				var divFooterText = document.createElement("div");
+				divFooterText.className = "turasfooter";
+				divFooterText.innerHTML = "Contemporary jewelry, traditional method<br/>made by hand in San Francisco";
 
-			footerElement.insertBefore(divFooterText, footerElement.firstChild);
+				footerElement.insertBefore(divFooterText, footerElement.firstChild);
+			}
+			injectedFooter = true;
 		}
 
 		var elements = document.getElementsByClassName("image-list");
