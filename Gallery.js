@@ -44,9 +44,11 @@ function turasGallery()
 			var meta = current.length > 1 && current[1];
 			console.log(meta);
 			var title = "";
+			var titleNoDescription = "";
 			try
 			{
 				title = meta.children[0].children[0].innerText;
+				titleNoDescription = title;
 				if(meta.children.length > 1)
 				{
 					var description = meta.children[1].children[0].innerText;
@@ -69,8 +71,12 @@ function turasGallery()
 				a.setAttribute("title", title);
 			}
 			var innerImage = document.createElement("img");
+			var innerText = document.createElement("div");
+			innerText.innerText = titleNoDescription;
+			innerText.className = "galleryImageTitle";
 			innerImage.setAttribute("src", img.dataset.src + "?format=200w");
 			a.appendChild(innerImage);
+			a.appendChild(innerText);
 			div.appendChild(a);
 
 			galleryImages.push(a);
