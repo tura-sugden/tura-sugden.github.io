@@ -71,7 +71,7 @@ function turasGallery()
 				a.setAttribute("title", title);
 			}
 			var innerImage = document.createElement("img");
-			var innerText = document.createElement("div");
+			var innerText = document.createElement("span");
 			innerText.innerText = titleNoDescription;
 			innerText.className = "galleryImageTitle";
 			innerImage.setAttribute("src", img.dataset.src + "?format=200w");
