@@ -63,6 +63,8 @@ function turasGallery()
 				console.log("ERROR", e);
 			}
 
+			var divWrap = document.createElement("div");
+			divWrap.className = "galleryImageWrap";
 			var a = document.createElement("a");
 			a.setAttribute("href", img.dataset.src);
 			a.setAttribute("rel", "gallery");
@@ -77,7 +79,8 @@ function turasGallery()
 			innerImage.setAttribute("src", img.dataset.src + "?format=200w");
 			a.appendChild(innerImage);
 			a.appendChild(innerText);
-			div.appendChild(a);
+			divWrap.appendChild(a);
+			div.appendChild(divWrap);
 
 			galleryImages.push(a);
 		}
